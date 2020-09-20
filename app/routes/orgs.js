@@ -1,7 +1,8 @@
 import Route from "@ember/routing/route";
-import RSVP from "rsvp";
 
 export default Route.extend({
+  favorites: Ember.inject.service(),
+
   model() {
     return [
       { id: "emberjs" },
@@ -11,5 +12,11 @@ export default Route.extend({
       { id: "netflix" },
       { id: "facebook" },
     ];
+  },
+
+  actions: {
+    favoritesClicked(org) {
+      this.get("favorites").favoriteItem(org);
+    },
   },
 });
