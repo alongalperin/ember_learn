@@ -1,6 +1,6 @@
 # Github-UI-Project
 
-My GitHub repo to follow along the course on Frontend Masters  
+My Github repo to follow along the course on Frontend Masters  
 https://frontendmasters.com/courses/ember-2/
 
 
