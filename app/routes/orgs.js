@@ -15,7 +15,7 @@ export default Route.extend({
   },
 
   actions: {
-    favoritesClicked(org) {
+    favoriteClicked(org) {
       this.get("favorites").favoriteItem(org);
     },
   },

@@ -1,6 +1,6 @@
 <ul>
-  {{#each model as |repo|}}
-  <li>{{link-to repo.name 'org.repo.issues' repo.name}}</li>
+  {{#each model as |repository|}}
+  {{github-repo repo=repository}}
   {{/each}}
 </ul>
 {{outlet}}
