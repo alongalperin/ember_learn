@@ -1,7 +1,11 @@
 import Service from "@ember/service";
 
 export default Service.extend({
-  items: [],
+  init(...args) {
+    this._super(...args);
+
+    this.items = this.items || [];
+  },
 
   favoriteItem(item) {
     this.get("items").addObject(item);
@@ -10,5 +14,8 @@ export default Service.extend({
         .map((x) => x.id)
         .join(" ")
     );
+  },
+  unfavoriteItem(item) {
+    this.get("items").removeObject(item);
   },
 });

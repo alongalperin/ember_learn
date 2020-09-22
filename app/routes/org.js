@@ -1,4 +1,7 @@
 import Route from "@ember/routing/route";
+import { Promise } from "rsvp";
+import $ from "jquery";
+import { later } from "@ember/runloop";
 
 export default Route.extend({
   actions: {
@@ -18,8 +21,8 @@ export default Route.extend({
         return rawOrg;
       })
       .then(function (data) {
-        return new Ember.RSVP.Promise((res, rej) => {
-          Ember.run.later(() => {
+        return new Promise((res) => {
+          later(() => {
             res(data);
           }, 2000);
         });
